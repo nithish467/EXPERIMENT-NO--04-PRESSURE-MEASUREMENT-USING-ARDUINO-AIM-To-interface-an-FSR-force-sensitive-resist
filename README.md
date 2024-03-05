@@ -1,9 +1,9 @@
-# EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
+## EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE :
-# NAME :
-# ROLLNUMBER :
-# DEPARTMENT
+# DATE : 01/03/2024
+# NAME : NITHISH KUMAR S
+# ROLLNUMBER : 212223240109
+# DEPARTMENT : AI&ML
 ## AIM: 
 To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
  
@@ -56,12 +56,16 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 
+###  CIRCUIT DIAGRAM:
+![Screenshot 2024-03-05 205136](https://github.com/nithish467/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/150232274/40742d7a-edb3-4f4e-a00c-6733c91d4468)
 
-![image](https://user-images.githubusercontent.com/36288975/163532979-a2a5cb5c-f495-442c-843e-bebb82737a35.png)
+![Screenshot 2024-03-05 205007](https://github.com/nithish467/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/150232274/2617e526-bf83-4c1b-9a42-e1a71bf6f7b9)
+
+### SCHEMATIC DIAGRAM :
+![Screenshot 2024-03-05 205749](https://github.com/nithish467/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/150232274/956837f8-adea-4198-965e-57d2a02be375)
 
 
 
-### FIGURE-03 CIRCUIT DIAGRAM
 
 
 
@@ -81,7 +85,38 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 ### PROGRAM 
  *your roll no 
  * your name 
- * department and year 
+ * department and year
+```
+int LED=7;
+int FSR;
+
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  FSR = analogRead(A0);
+  Serial.print("Raw value=");
+  Serial.println(FSR);
+  delay(500);
+  int m;
+  m=map(FSR,0,159,0,10);
+  Serial.print("mapped value=");
+  Serial.println(m);
+  
+  
+  if(FSR>50){
+    digitalWrite(LED,LOW);
+    delay(500);
+    digitalWrite(LED,HIGH);
+    delay(500);
+    }
+}
+
+```
  
  
  
@@ -101,7 +136,15 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 ![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
 
-### TABLE -02 standard deviation table 
+### standard deviation table 
+
+![Screenshot 2024-03-05 210616](https://github.com/nithish467/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/150232274/17abcd05-74c1-4f08-96bd-432d5e2a5126)
+
+![image](https://github.com/nithish467/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/150232274/cdcb7cad-b9f8-4fbf-b320-b853b0df1dc4)
+
+
+
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
