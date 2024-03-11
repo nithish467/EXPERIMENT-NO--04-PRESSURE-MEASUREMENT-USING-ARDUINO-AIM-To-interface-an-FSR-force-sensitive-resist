@@ -130,10 +130,6 @@ void loop()
  
  
  
- 
- 
-
-![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
 
 ### standard deviation table 
